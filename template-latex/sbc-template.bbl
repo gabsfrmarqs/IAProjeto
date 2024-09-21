@@ -1,18 +1,27 @@
 \begin{thebibliography}{}
 
-\bibitem[Boulic and Renault 1991]{boulic:91}
-Boulic, R. and Renault, O. (1991).
-\newblock 3d hierarchies for animation.
-\newblock In Magnenat-Thalmann, N. and Thalmann, D., editors, {\em New Trends in Animation and Visualization}. John Wiley {\&} Sons ltd.
+\bibitem[de~Oliveira 2024a]{professor_slides_2024parte1}
+de~Oliveira, P. D. I. C.~A. (2024a).
+\newblock Preparação e pré-processamento dos dados parte i.
+\newblock Slide de aula.
+\newblock Acesso em: 2024-09-21.
 
-\bibitem[Knuth 1984]{knuth:84}
-Knuth, D.~E. (1984).
-\newblock {\em The {\TeX} Book}.
-\newblock Addison-Wesley, 15th edition.
+\bibitem[de~Oliveira 2024b]{professor_slides_2024parte2}
+de~Oliveira, P. D. I. C.~A. (2024b).
+\newblock Preparação e pré-processamento dos dados parte ii.
+\newblock Slide de aula.
+\newblock Acesso em: 2024-09-21.
 
-\bibitem[Smith and Jones 1999]{smith:99}
-Smith, A. and Jones, B. (1999).
-\newblock On the complexity of computing.
-\newblock In Smith-Jones, A.~B., editor, {\em Advances in Computer Science}, pages 555--566. Publishing Press.
+\bibitem[de~Oliveira 2024c]{professor_slides_2024parte3}
+de~Oliveira, P. D. I. C.~A. (2024c).
+\newblock Preparação e pré-processamento dos dados parte iii.
+\newblock Slide de aula.
+\newblock Acesso em: 2024-09-21.
+
+\bibitem[Topcu 2024]{topcu2024top1500}
+Topcu, A.~C. (2024).
+\newblock Top 1500 games on steam by revenue 09-09-2024.
+\newblock \url{https://www.kaggle.com/datasets/alicemtopcu/top-1500-games-on-steam-by-revenue-09-09-2024}.
+\newblock Acesso em: 2024-09-21.
 
 \end{thebibliography}
