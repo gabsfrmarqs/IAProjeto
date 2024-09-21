@@ -1,8 +1,8 @@
-PWD c:/Users/gabri/IAProjeto/template-latex
+PWD c:/Users/gabri/IAProjeto/latex
 INPUT c:/texlive/2024/texmf.cnf
 INPUT c:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/gabri/IAProjeto/template-latex/sbc-template.tex
+INPUT c:/Users/gabri/IAProjeto/latex/sbc-template.tex
 OUTPUT sbc-template.log
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
