@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1727538965.70937 "main.aux" "main.bbl" "main" 1727538967.40237 0
+["bibtex main"] 1727538965.70937 "main.aux" "main.bbl" "main" 1727539898.93003 0
   "./main.bib" 1726935679 1011 7861fea33c84b063a40b125a09fe931a ""
   "./sbc.bst" 1530733464 21864 a668496cca21cfdd211f7fb5f0d57565 ""
-  "main.aux" 1727538966 1631 16dea833b74cc92cb7887a11ab17e338 "pdflatex"
+  "main.aux" 1727539898 1631 16dea833b74cc92cb7887a11ab17e338 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1727538966.03667 "c:/Users/gabri/IAProjeto/latex/main.tex" "main.pdf" "main" 1727538967.40302 0
-  "c:/Users/gabri/IAProjeto/latex/main.tex" 1727538963 4183 27e60cc0f85766f09926cdc33d8974fd ""
+["pdflatex"] 1727539897.56843 "c:/Users/gabri/IAProjeto/latex/main.tex" "main.pdf" "main" 1727539898.93068 0
+  "c:/Users/gabri/IAProjeto/latex/main.tex" 1727539897 4478 e0b701360714674b486ed6e4f17ade49 ""
   "c:/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1726937745 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1726938883 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1726936912 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -79,9 +79,9 @@
   "c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1726948166 5543950 2aa73a438b7054b2327b796fbe5f4275 ""
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1726948367 3326034 4fbfe570941d2c2355958added02fd98 ""
   "c:/texlive/2024/texmf.cnf" 1726948143 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1727538966 1631 16dea833b74cc92cb7887a11ab17e338 "pdflatex"
+  "main.aux" 1727539898 1631 16dea833b74cc92cb7887a11ab17e338 "pdflatex"
   "main.bbl" 1727538966 958 76d817f67bf6ff0d7495b9957bda31cb "bibtex main"
-  "main.tex" 1727538963 4183 27e60cc0f85766f09926cdc33d8974fd ""
+  "main.tex" 1727539897 4478 e0b701360714674b486ed6e4f17ade49 ""
   "sbc-template.sty" 1530733464 6074 ecc54df5124d8db4ac67c42cc728f3a5 ""
   (generated)
   "main.aux"
