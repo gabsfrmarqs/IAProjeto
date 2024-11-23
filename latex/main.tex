@@ -4,6 +4,7 @@
 \usepackage{graphicx,url}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
+\usepackage{booktabs}
 
      
 \sloppy
@@ -25,16 +26,16 @@ Pedro Machado Gomes Caixeta (RA: 10314309)\inst{1}}
 \maketitle
 
 \begin{abstract}
-  This project aims to perform a predictive analysis using as a main basis a dataset of 
-  1500 games from the Steam sales platform. The main objective is to predict and find a 
-  pattern related to revenue, reviews, other data, and the price of games in the store.
+This project aims to perform a predictive analysis using as a main basis a dataset of
+1500 games from the Steam sales platform. The main objective is to predict and find a
+pattern related to revenue, reviews, other data, and the price of games in the store.
 \end{abstract}
-     
-\begin{resumo} 
-  Este projeto apresenta como objetivo realizar uma análise preditiva utilizando
-  como base principal um dataset de 1500 jogos da plataforma de vendas Steam. O
-  objetivo majoritário é predizer e buscar um padrão relacionado à receita, avaliações, 
-  outros dados e o preço dos jogos na loja.
+
+\begin{resumo}
+Este projeto apresenta como objetivo realizar uma análise preditiva utilizando
+como base principal um dataset de 1500 jogos da plataforma de vendas Steam. O
+objetivo majoritário é predizer e buscar um padrão relacionado à receita, avaliações,
+outros dados e o preço dos jogos na loja.
 \end{resumo}
 
 
@@ -59,37 +60,139 @@ avaliações e preço, podem trazer insights valiosos para o setor.
 
 \subsection{Objetivo}
 
-O objetivo deste projeto é realizar uma análise preditiva utilizando um dataset de jogos 
-independentes (indies) da plataforma Steam, buscando encontrar padrões e prever informações 
-importantes para o sucesso de um jogo indie.
+O objetivo deste projeto é realizar uma análise preditiva utilizando um dataset de 
+jogos da plataforma Steam, buscando encontrar padrões e prever informações 
+importantes para o sucesso de um jogo.
 
 \subsection{Opção do projeto}
 
-A escolha deste dataset de jogos indies da Steam se justifica pela relevância e 
-disponibilidade de informações detalhadas sobre o mercado de jogos digitais independentes.
+A escolha deste dataset de jogos da Steam se justifica pela relevância e 
+disponibilidade de informações detalhadas sobre o mercado de jogos digitais.
 
 \section{Descrição do Problema}
 
-O principal problema a ser abordado neste projeto é a identificação de fatores-chave que 
-influenciam a receita dos jogos indies na plataforma Steam, com foco na análise da relação 
-entre a pontuação de avaliação (review) e a receita desses jogos. Pretende-se desenvolver 
-modelos preditivos capazes de estimar a receita dos jogos indies com base nas suas 
-características, especialmente a pontuação de revisão.
+O principal problema a ser abordado neste projeto é a identificação de fatores-chave 
+que influenciam a receita, as avaliações e o preço dos jogos na plataforma Steam. 
+Além disso, pretende-se desenvolver modelos preditivos capazes de estimar essas 
+métricas com base nas características dos jogos.
 
 \section{Dataset}
 
-O dataset utilizado neste projeto contém informações de jogos independentes (indies) da 
-plataforma Steam. Serão realizadas etapas de limpeza, tratamento de dados ausentes, 
-transformação de variáveis e análise exploratória para preparar o dataset para a modelagem 
-preditiva, com foco na análise da relação entre a pontuação de avaliação (review) e a 
-receita dos jogos indies.
+O conjunto de dados utilizado neste projeto contém informações sobre 1500 jogos da Steam, coletadas do Kaggle \cite{topcu2024top1500}.  As variáveis incluídas na análise são:
 
-\section{Metodologia e Resultados Esperados}
+\begin{itemize}
+\item name (Nome): Nome do jogo.
+\item revenue (Receita): Receita total gerada pelo jogo (variável alvo).
+\item price (Preço): Preço do jogo em dólares.
+\item copiesSold (Cópias Vendidas): Número de cópias vendidas.
+\item avgPlaytime (Tempo Médio de Jogo): Tempo médio de jogo em minutos.
+\item reviewScore (Avaliação): Pontuação média das avaliações dos usuários.
+\item publisherClass (Classe da Editora): Classificação da editora (AAA, AA, Indie, etc.).
+\item Release Year (Ano de Lançamento): Ano de lançamento do jogo.
+\end{itemize}
 
-Serão aplicadas técnicas de aprendizado de máquina supervisionado, como regressão 
-linear e árvores de decisão, para prever as métricas de receita, avaliações e 
-preço dos jogos. Espera-se obter modelos preditivos com bom desempenho, capazes 
-de fornecer insights valiosos para o mercado de jogos digitais.
+\subsection{Pré-processamento dos Dados}
+
+Antes do treinamento do modelo, os dados foram pré-processados para lidar com valores faltantes e garantir a compatibilidade com o algoritmo.  As seguintes etapas foram realizadas:
+
+\begin{itemize}
+\item Tratamento de valores faltantes:  Valores faltantes em variáveis numéricas foram imputados usando a mediana, enquanto valores faltantes em `publisherClass` foram imputados usando a moda.
+\item Conversão de data: A data de lançamento (`releaseDate`) foi convertida para o ano de lançamento (`Release Year`).
+\item One-Hot Encoding: A variável categórica `publisherClass` foi convertida para uma representação numérica usando one-hot encoding.
+\item Padronização: As variáveis numéricas foram padronizadas usando o `StandardScaler` para que tivessem média zero e desvio padrão igual a um.
+\end{itemize}
+
+\section{Metodologia}
+
+Para a previsão da receita dos jogos, foi utilizado o algoritmo Random Forest Regressor, um método de aprendizado de máquina ensemble que combina múltiplas árvores de decisão.  A escolha deste algoritmo se justifica por sua capacidade de lidar com dados não lineares e pela sua robustez a outliers.
+
+O conjunto de dados foi dividido em conjuntos de treinamento (80\%) e teste (20\%) usando o train\_test\_split do scikit-learn, com random\_state=42 para garantir a reprodutibilidade dos experimentos.
+
+Um pipeline foi utilizado para encadear as etapas de pré-processamento e o treinamento do modelo, facilitando a aplicação das transformações aos dados de forma consistente.
+
+\section{Resultados}
+Após o treinamento e avaliação do modelo no conjunto de teste, os seguintes resultados foram obtidos:
+
+\begin{itemize}
+\item RMSE: 1.177.379,51
+\item R-squared: 0.997
+\end{itemize}
+
+O R-squared de 0.997 indica que o modelo explica uma grande parte da variância na receita dos jogos no conjunto de *treinamento*. No entanto, o RMSE relativamente alto sugere que o modelo pode estar sofrendo de *overfitting*, ou seja, se ajustando muito bem aos dados de treinamento, mas não generalizando bem para novos dados.  É importante notar a necessidade de uma análise mais aprofundada do desempenho em um conjunto de validação para confirmar a presença de overfitting.
+
+\subsection{Exemplos de Previsões}
+
+As tabelas a seguir mostram exemplos de previsões do modelo para os conjuntos de treinamento e teste.  A coluna "Real" representa a receita real do jogo, enquanto a coluna "Previsto" representa a receita prevista pelo modelo.
+
+\begin{table} % H para manter a tabela aqui
+\centering  % Centralizar a tabela
+\caption{Exemplos de Previsões - Treino} % Adicione uma legenda
+\begin{tabular}{lrr} % Duas colunas numéricas alinhadas à direita
+\toprule  % Linha superior mais grossa
+Nome do Jogo & Receita Real & Receita Prevista \\ % Cabeçalho da tabela
+\midrule  % Linha separadora
+        Starstruck Vagabond &   162429.0 &   160572.52 \\
+             Shipwrecked 64 &   202048.0 &   185827.81\\
+ hololive Treasure Mountain &   291300.0 &   275343.24\\
+           Magical Delicacy &    66573.0 &    61196.47\\
+The Casting of Frank Stone™ &  1967699.0 &  2054725.86\\
+  Yaoling: Mythical Journey &  1047362.0 &  1033506.56\\
+       Beneath the Mountain &   102217.0 &   104950.20\\
+           Taora : Survival &    78871.0 &    78892.21\\
+           GUNDAM BREAKER 4 &  8440898.0 &  7754458.83\\
+                    Balatro & 20479210.0 & 20689501.51\\
+\bottomrule  % Linha inferior mais grossa
+\end{tabular}
+\end{table}
+
+
+\begin{table} % H para manter a tabela aqui
+\centering  % Centralizar a tabela
+\caption{Exemplos de Previsões - Teste} % Adicione uma legenda
+\begin{tabular}{lrr} % Duas colunas numéricas alinhadas à direita
+\toprule  % Linha superior mais grossa
+Nome do Jogo & Receita Real & Receita Prevista \\ % Cabeçalho da tabela
+\midrule  % Linha separadora
+              Time to Morp &   47790.0 & 4.745999e+04 \\
+           Real Dive World &   36294.0 & 3.823038e+04 \\
+           Immortal Family &  327846.0 & 3.817441e+05 \\
+  The Settlers: New Allies &  498522.0 & 9.245065e+05 \\
+                 KinitoPET & 1166563.0 & 1.392249e+06 \\
+              Hospital 666 &  596521.0 & 6.436494e+05 \\
+               Moonbreaker & 1367965.0 & 1.533254e+06 \\
+Fate/stay night REMASTERED &  764069.0 & 7.475598e+05 \\
+               Stigma-ARIA &   22306.0 & 2.340739e+04 \\
+             Terra Randoma &   46626.0 & 4.956908e+04 \\
+\bottomrule  % Linha inferior mais grossa
+\end{tabular}
+\end{table}
+
+
+
+
+\subsection{Gráficos de Dispersão}
+
+Os gráficos de dispersão abaixo comparam os valores reais e previstos da receita para os conjuntos de treinamento e teste.  A linha tracejada representa a situação ideal onde as previsões são perfeitas.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{graficoDispersaoTreino}
+    \caption{Gráfico de Dispersão - Treino}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{graficoDispersaoTeste.png}
+    \caption{Gráfico de Dispersão - Teste}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\section{Conclusão}
+
+Este projeto demonstrou a aplicação de técnicas de aprendizado de máquina para prever a receita de jogos na Steam.  O modelo Random Forest obteve um alto R-squared no conjunto de treinamento, mas o RMSE e a análise dos gráficos de dispersão sugerem a possibilidade de overfitting.  Futuros trabalhos podem explorar técnicas para mitigar o overfitting, como regularização, aumento do conjunto de dados ou a utilização de modelos mais robustos à generalização.  A exploração de outras variáveis e a engenharia de novas features também podem contribuir para a melhoria do desempenho preditivo.
 
 \section{Bibliografia}
 
@@ -101,6 +204,6 @@ disponibilizados nas seguintes partes:
 \cite{professor_slides_2024parte3}.
 
 \bibliographystyle{sbc}
-\bibliography{main}
+\bibliography{sbc-template}
 
 \end{document}
