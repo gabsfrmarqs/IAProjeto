@@ -100,11 +100,11 @@ Um pipeline foi utilizado para encadear as etapas de pré-processamento e o trei
 Após o treinamento e avaliação do modelo no conjunto de teste, os seguintes resultados foram obtidos:
 
 \begin{itemize}
-\item RMSE: 1.177.379,51
-\item R-squared: 0.997
+\item R (coeficiente de correlação): 0.97
+\item R² (coeficiente de determinação): 0.88
 \end{itemize}
 
-O R-squared de 0.997 indica que o modelo explica uma grande parte da variância na receita dos jogos no conjunto de *treinamento*. No entanto, o RMSE relativamente alto sugere que o modelo pode estar sofrendo de *overfitting*, ou seja, se ajustando muito bem aos dados de treinamento, mas não generalizando bem para novos dados.  É importante notar a necessidade de uma análise mais aprofundada do desempenho em um conjunto de validação para confirmar a presença de overfitting.
+O R² de 0.88 indica que o modelo explica 88\% da variância na receita dos jogos no conjunto de teste.  O coeficiente de correlação (R) de 0.97 demonstra uma forte correlação positiva entre os valores reais e previstos da receita. Embora esses resultados sejam promissores, é importante considerar que um modelo pode apresentar um bom desempenho em dados de treinamento, mas não generalizar bem para dados novos.  A possibilidade de overfitting deve ser investigada, e a utilização de técnicas como validação cruzada pode auxiliar nessa análise.  Um R² mais baixo no conjunto de teste em comparação com o conjunto de treinamento, por exemplo, pode ser um indicativo de overfitting.  Nesse caso, estratégias como regularização, aumento do conjunto de dados ou a escolha de um modelo mais simples podem ser consideradas para melhorar a generalização.
 
 \subsection{Exemplos de Previsões}
 
